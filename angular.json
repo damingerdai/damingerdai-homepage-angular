@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/damingerdai-homepage",
+            "outputPath": "dist/damingerdai-homepage/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -91,8 +91,65 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/damingerdai-homepage/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "damingerdai-homepage:build:development",
+              "serverTarget": "damingerdai-homepage:server:development"
+            },
+            "production": {
+              "browserTarget": "damingerdai-homepage:build:production",
+              "serverTarget": "damingerdai-homepage:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "damingerdai-homepage:build:production",
+              "serverTarget": "damingerdai-homepage:server:production"
+            },
+            "development": {
+              "browserTarget": "damingerdai-homepage:build:development",
+              "serverTarget": "damingerdai-homepage:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "79756665-8b86-472b-a7c2-02ce2446597c"
   }
 }
