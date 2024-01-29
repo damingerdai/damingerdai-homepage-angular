@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "serve:ssr": "node dist/damingerdai-homepage/server.mjs"
+    "serve:ssr": "node dist/damingerdai-homepage/server/server.mjs"
   },
   "private": true,
   "dependencies": {
