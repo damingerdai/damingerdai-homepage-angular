@@ -12,7 +12,7 @@ import { MyOpenSourceComponent } from './my-open-source/my-open-source.component
 import { ReadmeComponent } from './readme/readme.component';
 import { TitleComponent } from './title/title.component';
 import { TopImageComponent } from './top-image/top-image.component';
-
+import { NavbarComponent } from './navbar/navbar.component';
 
 const standaloneComponents = [
   AboutMeComponent,
@@ -27,6 +27,7 @@ const standaloneComponents = [
   ReadmeComponent,
   TitleComponent,
   TopImageComponent,
+  NavbarComponent,
 ];
 
 @Component({
@@ -34,9 +35,7 @@ const standaloneComponents = [
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   standalone: true,
-  imports: [
-    ...standaloneComponents
-  ]
+  imports: [...standaloneComponents],
 })
 export class AppComponent {
   title = 'damingerdai-homepage';

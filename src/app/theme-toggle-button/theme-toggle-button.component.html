@@ -1,0 +1,9 @@
+<div [@fadeInOut]="fadeState">
+  <button
+    ariaLabel="toggle theme"
+    class="p-2 rounded-lg bg-purple-500 dark:bg-orange-500"
+    (click)="toogleTheme()"
+  >
+    {{ isDark ? "dark" : "light" }}
+  </button>
+</div>
