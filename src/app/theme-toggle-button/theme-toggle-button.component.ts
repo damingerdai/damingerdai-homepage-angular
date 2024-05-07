@@ -7,11 +7,12 @@ import {
 } from '@angular/animations';
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject } from '@angular/core';
+import { IconsModule } from '../icons/icons.module';
 
 @Component({
   selector: 'app-theme-toggle-button',
   standalone: true,
-  imports: [],
+  imports: [IconsModule],
   templateUrl: './theme-toggle-button.component.html',
   styleUrl: './theme-toggle-button.component.css',
   animations: [

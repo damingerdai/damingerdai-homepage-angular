@@ -4,6 +4,10 @@
     class="p-2 rounded-lg bg-purple-500 dark:bg-orange-500"
     (click)="toogleTheme()"
   >
-    {{ isDark ? "dark" : "light" }}
+    @if (isDark) {
+      <app-moon-icon />
+    } @else {
+      <app-sun-icon />
+    }
   </button>
 </div>
