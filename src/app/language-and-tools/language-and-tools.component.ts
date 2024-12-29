@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { LanguageIconComponent } from '../language-icon/language-icon.component';
 
 @Component({
-  selector: 'app-language-and-tools',
-  standalone: true,
-  imports: [CommonModule, LanguageIconComponent],
-  templateUrl: './language-and-tools.component.html',
-  styleUrls: ['./language-and-tools.component.css']
+    selector: 'app-language-and-tools',
+    imports: [CommonModule, LanguageIconComponent],
+    templateUrl: './language-and-tools.component.html',
+    styleUrls: ['./language-and-tools.component.css']
 })
 export class LanguageAndToolsComponent {
 

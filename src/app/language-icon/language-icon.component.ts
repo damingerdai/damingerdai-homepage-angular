@@ -2,11 +2,10 @@ import { Component, Input } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 @Component({
-  selector: 'app-language-icon',
-  standalone: true,
-  imports: [CommonModule, NgOptimizedImage],
-  templateUrl: './language-icon.component.html',
-  styleUrls: ['./language-icon.component.css']
+    selector: 'app-language-icon',
+    imports: [CommonModule, NgOptimizedImage],
+    templateUrl: './language-icon.component.html',
+    styleUrls: ['./language-icon.component.css']
 })
 export class LanguageIconComponent {
 

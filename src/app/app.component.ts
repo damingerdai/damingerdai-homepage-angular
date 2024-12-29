@@ -31,11 +31,10 @@ const standaloneComponents = [
 ];
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  standalone: true,
-  imports: [...standaloneComponents],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    imports: [...standaloneComponents]
 })
 export class AppComponent {
   title = 'damingerdai-homepage';

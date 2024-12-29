@@ -10,18 +10,17 @@ import { Component, Inject } from '@angular/core';
 import { IconsModule } from '../icons/icons.module';
 
 @Component({
-  selector: 'app-theme-toggle-button',
-  standalone: true,
-  imports: [IconsModule],
-  templateUrl: './theme-toggle-button.component.html',
-  styleUrl: './theme-toggle-button.component.css',
-  animations: [
-    trigger('fadeInOut', [
-      state('in', style({ opacity: 0, transform: 'translateY(-20px)' })),
-      state('out', style({ opacity: 1, transition: 'translateY(0)' })),
-      transition('in => out', animate('200ms ease-out')),
-    ]),
-  ],
+    selector: 'app-theme-toggle-button',
+    imports: [IconsModule],
+    templateUrl: './theme-toggle-button.component.html',
+    styleUrl: './theme-toggle-button.component.css',
+    animations: [
+        trigger('fadeInOut', [
+            state('in', style({ opacity: 0, transform: 'translateY(-20px)' })),
+            state('out', style({ opacity: 1, transition: 'translateY(0)' })),
+            transition('in => out', animate('200ms ease-out')),
+        ]),
+    ]
 })
 export class ThemeToggleButtonComponent {
   public fadeState = 'out';
