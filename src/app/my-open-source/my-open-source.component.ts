@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import { DividerComponent } from '../divider/divider.component';
 
 @Component({
     selector: 'app-my-open-source',
-    imports: [CommonModule, DividerComponent, NgOptimizedImage],
+    imports: [DividerComponent, NgOptimizedImage],
     templateUrl: './my-open-source.component.html',
     styleUrls: ['./my-open-source.component.css']
 })

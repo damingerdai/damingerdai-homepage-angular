@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
     selector: 'app-blog-link',
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './blog-link.component.html',
     styleUrls: ['./blog-link.component.css']
 })

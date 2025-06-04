@@ -5,8 +5,8 @@ import {
   trigger,
   state,
 } from '@angular/animations';
-import { DOCUMENT } from '@angular/common';
-import { Component, Inject } from '@angular/core';
+
+import { Component, Inject, DOCUMENT } from '@angular/core';
 import { IconsModule } from '../icons/icons.module';
 
 @Component({

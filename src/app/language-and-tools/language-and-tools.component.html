@@ -1,8 +1,10 @@
 <div class="mt-4">
-    <a href="#languages-and-tools">
-        <h2 id="languages-and-tools">🌈 Languages and Tools:</h2>
-    </a>
+  <a href="#languages-and-tools">
+    <h2 id="languages-and-tools">🌈 Languages and Tools:</h2>
+  </a>
 </div>
 <div class="mt-4 flex flex-wrap">
-    <app-language-icon *ngFor="let language of languages" [name]="language.name" [alt]="language.alt" />
+  @for (language of languages; track language) {
+    <app-language-icon [name]="language.name" [alt]="language.alt" />
+  }
 </div>
