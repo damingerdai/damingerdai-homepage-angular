@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { DividerComponent } from '../divider/divider.component';
 
@@ -6,6 +6,7 @@ import { DividerComponent } from '../divider/divider.component';
     selector: 'app-my-most-used-languages',
     imports: [DividerComponent, NgOptimizedImage],
     templateUrl: './my-most-used-languages.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./my-most-used-languages.component.css']
 })
 export class MyMostUsedLanguagesComponent {

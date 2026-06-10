@@ -6,7 +6,7 @@ import {
   state,
 } from '@angular/animations';
 
-import { Component, Inject, DOCUMENT } from '@angular/core';
+import { Component, Inject, DOCUMENT, ChangeDetectionStrategy } from '@angular/core';
 import { IconsModule } from '../icons/icons.module';
 
 @Component({
@@ -14,6 +14,7 @@ import { IconsModule } from '../icons/icons.module';
     imports: [IconsModule],
     templateUrl: './theme-toggle-button.component.html',
     styleUrl: './theme-toggle-button.component.css',
+    changeDetection: ChangeDetectionStrategy.Eager,
     animations: [
         trigger('fadeInOut', [
             state('in', style({ opacity: 0, transform: 'translateY(-20px)' })),

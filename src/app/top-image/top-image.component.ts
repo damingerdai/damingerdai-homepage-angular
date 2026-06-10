@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 
 
@@ -6,6 +6,7 @@ import { NgOptimizedImage } from '@angular/common';
     selector: 'app-top-image',
     imports: [NgOptimizedImage],
     templateUrl: './top-image.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./top-image.component.css']
 })
 export class TopImageComponent {

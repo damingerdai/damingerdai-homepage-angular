@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 
 @Component({
     selector: 'app-language-icon',
     imports: [NgOptimizedImage],
     templateUrl: './language-icon.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./language-icon.component.css']
 })
 export class LanguageIconComponent {

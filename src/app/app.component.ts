@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { AboutMeComponent } from './about-me/about-me.component';
 import { BlogLinkComponent } from './blog-link/blog-link.component';
@@ -34,6 +34,7 @@ const standaloneComponents = [
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [...standaloneComponents]
 })
 export class AppComponent {

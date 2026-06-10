@@ -3,7 +3,7 @@ import {
   provideRouter,
   withEnabledBlockingInitialNavigation,
 } from '@angular/router';
-import { provideClientHydration } from '@angular/platform-browser';
+import { provideClientHydration, withNoIncrementalHydration } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { routes } from './app.routes';
 
@@ -15,6 +15,6 @@ export const appConfig: ApplicationConfig = {
       withEnabledBlockingInitialNavigation(),
       //withPreloading(PreloadService),
     ),
-    provideClientHydration(),
+    provideClientHydration(withNoIncrementalHydration()),
   ],
 };

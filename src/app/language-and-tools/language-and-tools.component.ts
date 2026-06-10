@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { LanguageIconComponent } from '../language-icon/language-icon.component';
 
@@ -6,6 +6,7 @@ import { LanguageIconComponent } from '../language-icon/language-icon.component'
     selector: 'app-language-and-tools',
     imports: [LanguageIconComponent],
     templateUrl: './language-and-tools.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./language-and-tools.component.css']
 })
 export class LanguageAndToolsComponent {
