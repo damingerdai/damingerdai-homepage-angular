@@ -1,13 +1,19 @@
-<div [@fadeInOut]="fadeState">
+<div>
   <button
     aria-label="toggle theme"
     class="p-2 rounded-lg bg-purple-500 dark:bg-orange-500"
     (click)="toogleTheme()"
   >
-    @if (isDark) {
-      <app-moon-icon />
+    @if (isDark()) {
+    <app-moon-icon
+      class="block animate-fade-in"
+      [animate.enter]="{ style: { opacity: 0, transform: 'translateY(-20px)' }, use: '200ms ease-out' }"
+    />
     } @else {
-      <app-sun-icon />
+    <app-sun-icon
+      class="block animate-fade-in"
+      [animate.enter]="{ style: { opacity: 0, transform: 'translateY(-20px)' }, use: '200ms ease-out' }"
+    />
     }
   </button>
 </div>

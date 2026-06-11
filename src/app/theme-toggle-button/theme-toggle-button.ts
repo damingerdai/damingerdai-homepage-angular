@@ -11,6 +11,7 @@ import {
   Inject,
   DOCUMENT,
   ChangeDetectionStrategy,
+  signal,
 } from '@angular/core';
 import { IconsModule } from '../icons/icons.module';
 
@@ -20,35 +21,31 @@ import { IconsModule } from '../icons/icons.module';
   templateUrl: './theme-toggle-button.html',
   styleUrl: './theme-toggle-button.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: [
-    trigger('fadeInOut', [
-      state('in', style({ opacity: 0, transform: 'translateY(-20px)' })),
-      state('out', style({ opacity: 1, transition: 'translateY(0)' })),
-      transition('in => out', animate('200ms ease-out')),
-    ]),
-  ],
 })
 export class ThemeToggleButtonComponent {
   public fadeState = 'out';
-  public isDark = false;
+  public isDark = signal(false);
 
   public toogleTheme() {
-    this.fadeState = 'in';
-    this.isDark = !this.isDark;
-    if (this.isDark) {
-      this.document.body.classList.remove('light');
-      this.document.body.classList.add('dark');
-      this.document.documentElement.classList.remove('light');
-      this.document.documentElement.classList.add('dark');
-      this.document.documentElement.style.setProperty('color-scheme', 'dark');
+    this.isDark.update((dark) => !dark);
+    const isDarkValue = this.isDark();
+
+    const targetEl = this.document.documentElement;
+    const bodyEl = this.document.body;
+
+    if (isDarkValue) {
+      bodyEl.classList.remove('light');
+      bodyEl.classList.add('dark');
+      targetEl.classList.remove('light');
+      targetEl.classList.add('dark');
+      targetEl.style.setProperty('color-scheme', 'dark');
     } else {
-      this.document.body.classList.add('light');
-      this.document.body.classList.remove('dark');
-      this.document.documentElement.classList.remove('dark');
-      this.document.documentElement.classList.add('light');
-      this.document.documentElement.style.setProperty('color-scheme', 'light');
+      bodyEl.classList.add('light');
+      bodyEl.classList.remove('dark');
+      targetEl.classList.remove('dark');
+      targetEl.classList.add('light');
+      targetEl.style.setProperty('color-scheme', 'light');
     }
-    setTimeout(() => (this.fadeState = 'out'), 200);
   }
 
   constructor(@Inject(DOCUMENT) private document: Document) {
