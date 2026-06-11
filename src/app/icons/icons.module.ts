@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { SunIconComponent } from './sun-icon/sun-icon.component';
-import { MoonIconComponent } from './moon-icon/moon-icon.component';
+import { SunIconComponent } from './sun-icon';
+import { MoonIconComponent } from './moon-icon';
 
 @NgModule({
   declarations: [],
